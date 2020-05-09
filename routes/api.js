@@ -2,8 +2,8 @@ const router = require("express").Router();
 
 const Workout = require("../models/workout.js");
 
-router.post("/api/workouts", ({ body }, res) =>{
-    Workout.create(body)
+router.post("/api/workouts", (req, res) =>{
+    Workout.create(req)
     .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -12,8 +12,8 @@ router.post("/api/workouts", ({ body }, res) =>{
       });
 });
 
-router.post("/api/workouts/", ({ body }, res) => {
-    Workout.insertOne(body)
+router.post("/api/workouts/", (req, res) => {
+    Workout.insertOne(req)
       .then(dbTransaction => {
         res.json(dbTransaction);
       })
@@ -33,8 +33,8 @@ router.post("/api/workouts/", ({ body }, res) => {
       });
   });
 
-  router.put("/api/workouts/:id", ({ body }, res) =>{
-    Workout.create(body)
+  router.put("/api/workouts/:id", (req, res) =>{
+    Workout.create(req)
     .then(dbWorkout => {
         res.json(dbWorkout);
       })
