@@ -43,8 +43,8 @@ router.post("/api/workouts/", (req, res) => {
       });
 });
 
-  router.get("/api/workout/range", (req, res) => {
-    Transaction.find({})
+  router.get("/api/workouts/range", (req, res) => {
+    Workout.find({})
       .sort({ day: -1 })
       .then(dbTransaction => {
         res.json(dbTransaction);
